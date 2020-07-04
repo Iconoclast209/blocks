@@ -252,6 +252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 765214915}
+  - component: {fileID: 765214916}
   m_Layer: 0
   m_Name: CubeSpawner
   m_TagString: Untagged
@@ -273,6 +274,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &765214916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765214914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583018192880b384bbbc99e2b6d857af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pieces:
+  - {fileID: 3811378856674202937, guid: b8c6e932377ec6f4e82900242fce912e, type: 3}
+  - {fileID: 4044201832068727315, guid: 688aaa9b0cb50974392240fdbd3cf128, type: 3}
+  - {fileID: 4577979202001673822, guid: f3425db1b9d1ece4ab901787b1a93485, type: 3}
+  - {fileID: 2066986922581762658, guid: 16c39a92b0e469041803590b7bad7f9f, type: 3}
+  - {fileID: 6733494671552909534, guid: a316ae646aae6ef44ad83bbdb0dc859b, type: 3}
+  timeBetweenSpawns: 3
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
