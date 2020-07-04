@@ -18,12 +18,16 @@ public class Piece : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeSinceLastMove += Time.deltaTime;
 
-        if(timeSinceLastMove >= timeBetweenMoves)
+        if(!grounded)
         {
-            MovePieceDownward();
-            timeSinceLastMove = 0;
+            timeSinceLastMove += Time.deltaTime;
+
+            if (timeSinceLastMove >= timeBetweenMoves)
+            {
+                MovePieceDownward();
+                timeSinceLastMove = 0;
+            }
         }
     }
 
@@ -36,6 +40,21 @@ public class Piece : MonoBehaviour
             Vector3 newPosition = new Vector3(this.transform.position.x, newY, this.transform.position.z);
             this.transform.position = newPosition;
         }
-        
+        CheckForCollision();        
     }
+
+    void CheckForCollision()
+    {
+        RaycastHit hit;
+        Vector3 origin = new Vector3(transform.position.x, transform.position.y-2, transform.position.z);
+        Debug.Log("Checking for Collision");
+
+        if (Physics.Raycast(origin, Vector3.up, out hit, 1.0f))
+        {
+            //Debug.DrawRay(origin, Vector3.up * hit.distance, Color.yellow);
+            Debug.Log("Hit");
+            grounded = true;
+        }
+    }
+
 }
